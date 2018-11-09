@@ -1,0 +1,10 @@
+D:\Asp.net备课\传智播客备课\企业管理\Itcast.CMS\Itcast.CMS.Common\bin\Debug\Itcast.CMS.Common.dll
+D:\Asp.net备课\传智播客备课\企业管理\Itcast.CMS\Itcast.CMS.Common\bin\Debug\Itcast.CMS.Common.pdb
+D:\Asp.net备课\传智播客备课\企业管理\Itcast.CMS\Itcast.CMS.Common\obj\Debug\Itcast.CMS.Common.dll
+D:\Asp.net备课\传智播客备课\企业管理\Itcast.CMS\Itcast.CMS.Common\obj\Debug\Itcast.CMS.Common.pdb
+D:\Asp.net备课\传智播客备课\企业管理\Itcast.CMS\Itcast.CMS.Common\obj\Debug\Itcast.CMS.Common.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Desktop\完整版代码\Itcast.CMS\Itcast.CMS.Common\bin\Debug\Itcast.CMS.Common.dll
+C:\Users\Lenovo\Desktop\完整版代码\Itcast.CMS\Itcast.CMS.Common\bin\Debug\Itcast.CMS.Common.pdb
+C:\Users\Lenovo\Desktop\完整版代码\Itcast.CMS\Itcast.CMS.Common\obj\Debug\Itcast.CMS.Common.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Desktop\完整版代码\Itcast.CMS\Itcast.CMS.Common\obj\Debug\Itcast.CMS.Common.dll
+C:\Users\Lenovo\Desktop\完整版代码\Itcast.CMS\Itcast.CMS.Common\obj\Debug\Itcast.CMS.Common.pdb

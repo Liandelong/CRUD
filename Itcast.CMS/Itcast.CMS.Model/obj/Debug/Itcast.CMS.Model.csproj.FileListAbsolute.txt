@@ -1,0 +1,10 @@
+D:\Asp.net备课\传智播客备课\企业管理\Itcast.CMS\Itcast.CMS.Model\bin\Debug\Itcast.CMS.Model.dll
+D:\Asp.net备课\传智播客备课\企业管理\Itcast.CMS\Itcast.CMS.Model\bin\Debug\Itcast.CMS.Model.pdb
+D:\Asp.net备课\传智播客备课\企业管理\Itcast.CMS\Itcast.CMS.Model\obj\Debug\Itcast.CMS.Model.dll
+D:\Asp.net备课\传智播客备课\企业管理\Itcast.CMS\Itcast.CMS.Model\obj\Debug\Itcast.CMS.Model.pdb
+D:\Asp.net备课\传智播客备课\企业管理\Itcast.CMS\Itcast.CMS.Model\obj\Debug\Itcast.CMS.Model.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Desktop\完整版代码\Itcast.CMS\Itcast.CMS.Model\bin\Debug\Itcast.CMS.Model.dll
+C:\Users\Lenovo\Desktop\完整版代码\Itcast.CMS\Itcast.CMS.Model\bin\Debug\Itcast.CMS.Model.pdb
+C:\Users\Lenovo\Desktop\完整版代码\Itcast.CMS\Itcast.CMS.Model\obj\Debug\Itcast.CMS.Model.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Desktop\完整版代码\Itcast.CMS\Itcast.CMS.Model\obj\Debug\Itcast.CMS.Model.dll
+C:\Users\Lenovo\Desktop\完整版代码\Itcast.CMS\Itcast.CMS.Model\obj\Debug\Itcast.CMS.Model.pdb
