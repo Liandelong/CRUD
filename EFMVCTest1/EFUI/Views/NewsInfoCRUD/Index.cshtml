@@ -1,0 +1,76 @@
+﻿@using EFModel;
+@model IQueryable<NewsInfo>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            LoadList(1);
+            $("a:contains('删除')").click(function () {
+                if (!confirm("确定要删除吗?")) {
+                    return false;
+                }
+            });
+        });
+        function GoPage(pageIndex) {
+            LoadList(pageIndex);
+        }
+
+        function LoadList(pageIndex) {
+            $.getJSON(//异步提交
+                '@Url.Action("LoadList", "NewsInfoCRUD")',
+                {
+                    pageSize:5,
+                    pageIndex: pageIndex
+                },
+                function(list1){//异步回调
+                    var list=$('#list');
+                    list.empty();
+                    $.each(list1.list,function(index,value){
+                        list.append('<tr><td>' + value.NewsId + '</td><td>' + value.NewsConent + '</td><td>'
+                            + value.RegTime + '</td><td>' + value.TypeConent
+                            + '</td><td><a href="@Url.Action("Edit","NewsInfoCRUD")?id=' + value.NewsId + '">修改</a></td><td><a  href="@Url.Action("Remove","NewsInfoCRUD")?id=' + value.NewsId + '">删除</a></td></tr>')
+                    });
+                    list.append('<tr><td colspan=6>' + list1.page + '</td></tr>');
+                }
+                );
+        }
+    </script>
+</head>
+<body>
+    <div> 
+        @Html.ActionLink("添加","Add","NewsInfoCRUD")
+        <table border="1">   
+            <tr>
+                <th>编号</th>
+                <th>内容</th>
+                <th>时间</th>
+                <th>类型</th>
+                <th>修改</th>
+                <th>删除</th>
+            </tr> 
+            <tbody id="list">
+
+            </tbody>  
+            @*@foreach (NewsInfo newInfo in Model)
+            {
+                <tr>
+                    <td>@newInfo.NewsId</td>
+                    <td>@newInfo.NewsConent</td>
+                    <td>@newInfo.RegTime</td>
+                    <td>@newInfo.TypeInfo.TypeConent</td>
+                </tr>
+            }*@
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EFTest1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="NewsInfo">
+    <Key>
+      <PropertyRef Name="NewsId" />
+    </Key>
+    <Property Name="NewsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewsConent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RegTime" Type="DateTime" Precision="3" />
+    <Property Name="TypeId" Type="Int32" />
+    <NavigationProperty Name="TypeInfo" Relationship="Self.FK_NewsInfo_NewsInfo" FromRole="NewsInfo" ToRole="TypeInfo" />
+  </EntityType>
+  <EntityType Name="TypeInfo">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeConent" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NewsInfo" Relationship="Self.FK_NewsInfo_NewsInfo" FromRole="TypeInfo" ToRole="NewsInfo" />
+  </EntityType>
+  <Association Name="FK_NewsInfo_NewsInfo">
+    <End Role="TypeInfo" Type="Self.TypeInfo" Multiplicity="0..1" />
+    <End Role="NewsInfo" Type="Self.NewsInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeInfo">
+        <PropertyRef Name="TypeId" />
+      </Principal>
+      <Dependent Role="NewsInfo">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MyContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="NewsInfo" EntityType="Self.NewsInfo" />
+    <EntitySet Name="TypeInfo" EntityType="Self.TypeInfo" />
+    <AssociationSet Name="FK_NewsInfo_NewsInfo" Association="Self.FK_NewsInfo_NewsInfo">
+      <End Role="TypeInfo" EntitySet="TypeInfo" />
+      <End Role="NewsInfo" EntitySet="NewsInfo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

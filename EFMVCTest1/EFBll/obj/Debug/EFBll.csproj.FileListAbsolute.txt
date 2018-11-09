@@ -1,0 +1,11 @@
+D:\百度云盘\学习内容\EFMVCTest1\EFBll\bin\Debug\EFBll.dll
+D:\百度云盘\学习内容\EFMVCTest1\EFBll\bin\Debug\EFBll.pdb
+D:\百度云盘\学习内容\EFMVCTest1\EFBll\bin\Debug\EFDal.dll
+D:\百度云盘\学习内容\EFMVCTest1\EFBll\bin\Debug\EFModel.dll
+D:\百度云盘\学习内容\EFMVCTest1\EFBll\bin\Debug\EntityFramework.dll
+D:\百度云盘\学习内容\EFMVCTest1\EFBll\bin\Debug\EFDal.pdb
+D:\百度云盘\学习内容\EFMVCTest1\EFBll\bin\Debug\EFModel.pdb
+D:\百度云盘\学习内容\EFMVCTest1\EFBll\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\百度云盘\学习内容\EFMVCTest1\EFBll\obj\Debug\EFBll.csprojResolveAssemblyReference.cache
+D:\百度云盘\学习内容\EFMVCTest1\EFBll\obj\Debug\EFBll.dll
+D:\百度云盘\学习内容\EFMVCTest1\EFBll\obj\Debug\EFBll.pdb

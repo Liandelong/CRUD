@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EFTest1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="NewsInfo">
+          <Key>
+            <PropertyRef Name="NewsId" />
+          </Key>
+          <Property Name="NewsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NewsConent" Type="nvarchar" MaxLength="50" />
+          <Property Name="RegTime" Type="datetime" />
+          <Property Name="TypeId" Type="int" />
+        </EntityType>
+        <EntityType Name="TypeInfo">
+          <Key>
+            <PropertyRef Name="TypeId" />
+          </Key>
+          <Property Name="TypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeConent" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <Association Name="FK_NewsInfo_NewsInfo">
+          <End Role="TypeInfo" Type="Self.TypeInfo" Multiplicity="0..1" />
+          <End Role="NewsInfo" Type="Self.NewsInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeInfo">
+              <PropertyRef Name="TypeId" />
+            </Principal>
+            <Dependent Role="NewsInfo">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EFTest1ModelStoreContainer">
+          <EntitySet Name="NewsInfo" EntityType="Self.NewsInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeInfo" EntityType="Self.TypeInfo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_NewsInfo_NewsInfo" Association="Self.FK_NewsInfo_NewsInfo">
+            <End Role="TypeInfo" EntitySet="TypeInfo" />
+            <End Role="NewsInfo" EntitySet="NewsInfo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EFTest1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="NewsInfo">
+          <Key>
+            <PropertyRef Name="NewsId" />
+          </Key>
+          <Property Name="NewsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NewsConent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RegTime" Type="DateTime" Precision="3" />
+          <Property Name="TypeId" Type="Int32" />
+          <NavigationProperty Name="TypeInfo" Relationship="Self.FK_NewsInfo_NewsInfo" FromRole="NewsInfo" ToRole="TypeInfo" />
+        </EntityType>
+        <EntityType Name="TypeInfo">
+          <Key>
+            <PropertyRef Name="TypeId" />
+          </Key>
+          <Property Name="TypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeConent" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NewsInfo" Relationship="Self.FK_NewsInfo_NewsInfo" FromRole="TypeInfo" ToRole="NewsInfo" />
+        </EntityType>
+        <Association Name="FK_NewsInfo_NewsInfo">
+          <End Role="TypeInfo" Type="Self.TypeInfo" Multiplicity="0..1" />
+          <End Role="NewsInfo" Type="Self.NewsInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeInfo">
+              <PropertyRef Name="TypeId" />
+            </Principal>
+            <Dependent Role="NewsInfo">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MyContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="NewsInfo" EntityType="Self.NewsInfo" />
+          <EntitySet Name="TypeInfo" EntityType="Self.TypeInfo" />
+          <AssociationSet Name="FK_NewsInfo_NewsInfo" Association="Self.FK_NewsInfo_NewsInfo">
+            <End Role="TypeInfo" EntitySet="TypeInfo" />
+            <End Role="NewsInfo" EntitySet="NewsInfo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EFTest1ModelStoreContainer" CdmEntityContainer="MyContext">
+          <EntitySetMapping Name="NewsInfo">
+            <EntityTypeMapping TypeName="EFTest1Model.NewsInfo">
+              <MappingFragment StoreEntitySet="NewsInfo">
+                <ScalarProperty Name="NewsId" ColumnName="NewsId" />
+                <ScalarProperty Name="NewsConent" ColumnName="NewsConent" />
+                <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeInfo">
+            <EntityTypeMapping TypeName="EFTest1Model.TypeInfo">
+              <MappingFragment StoreEntitySet="TypeInfo">
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="TypeConent" ColumnName="TypeConent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

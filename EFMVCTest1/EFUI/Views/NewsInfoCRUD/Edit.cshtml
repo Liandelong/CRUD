@@ -1,0 +1,27 @@
+﻿@model EFModel.NewsInfo
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div>
+       @using (Html.BeginForm("Edit", "NewsInfoCRUD", FormMethod.Post))
+       {
+           @Html.HiddenFor(u=>u.NewsId)
+           @Html.TextBoxFor(u=>u.NewsConent)
+           <br />
+           @Html.TextBoxFor(u=>u.RegTime)
+           <br />
+           @Html.DropDownListFor(u=>u.TypeId, (IEnumerable<SelectListItem>)ViewBag.TypeList)
+           <input type="submit" value="修改" />
+       }
+    </div>
+</body>
+</html>
